@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "shambala_TreadsExampl_01-11_2023/1.0.0": {
+        "runtime": {
+          "shambala_TreadsExampl_01-11_2023.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "shambala_TreadsExampl_01-11_2023/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
