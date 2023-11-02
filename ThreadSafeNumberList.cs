@@ -9,6 +9,7 @@ namespace shambala_ThreadsExampl_01_11_2023
     // класс для создания списка 
     internal class ThreadSafeNumberList
     {
+        internal int maxCount;
         private List<int> numbers;
         // конструктор 
         public ThreadSafeNumberList()

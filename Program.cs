@@ -1,21 +1,44 @@
 ﻿using shambala_ThreadsExampl_01_11_2023;
 
+using Monitor = shambala_ThreadsExampl_01_11_2023.Monitor;
+
 namespace shambala_TreadsExampl_01_11_2023
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            RunMonitor();
-        }
         public static void RunMonitor()
         {
             // 1. Создание обьектов
             ThreadSafeNumberList numberList = new ThreadSafeNumberList();
-            shambala_ThreadsExampl_01_11_2023.Monitor monitor = new shambala_ThreadsExampl_01_11_2023.Monitor(numberList,1000);
-            Thread monitorThread = new Thread(monitor.Run); 
+            shambala_ThreadsExampl_01_11_2023.Monitor monitor = new shambala_ThreadsExampl_01_11_2023.Monitor(numberList, 1000);
+            Thread monitorThread = new Thread(monitor.Run);
             monitorThread.Start();
         }
+        // создаём генератор 
+        public static void RunGeneratorMonitor()
+        {
+            Random random = new Random();
+            ThreadSafeNumberList numberList = new ThreadSafeNumberList();
+            Generator generator = new Generator(numberList, 1000,random,10,10,10);
+            shambala_ThreadsExampl_01_11_2023.Monitor monitor = new shambala_ThreadsExampl_01_11_2023.Monitor(numberList, 1000);
+            System.Threading.Thread monitorThread = new System.Threading.Thread(monitor.Run);
+            System.Threading.Thread monitorThreads = new System.Threading.Thread(generator.Run);
+        }
+        public static void RunConsumer(int count)
+        {
+            ThreadSafeNumberList numberList = new ThreadSafeNumberList();
+            Monitor monitor = new Monitor(numberList,1000);
+            Random random = new Random();
+            Generator generator = new Generator(numberList,10,random,0,10,3000);
+            Consumer consumer = new Consumer( numberList,random,0,10,3000);
+        }
+        static void Main(string[] args)
+        {
+            RunMonitor();
+        }
+     
+      
+       
     }
 }
 // ЗАДАЧА: написать программу наполнения списка случайных чисел

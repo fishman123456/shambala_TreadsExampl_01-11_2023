@@ -9,25 +9,28 @@ namespace shambala_ThreadsExampl_01_11_2023
     internal class Consumer
     {
         private ThreadSafeNumberList numberList;
-        private Random countNumber;
+        private Random random;
         private Random interval;
         private int minInterval;
         private int maxInterval;
+        private int maxCount;
         public Consumer(ThreadSafeNumberList numberList,
-            Random countList,Random interval, int minInterval, int maxInterval)
+            Random random, int minInterval, int maxInterval,
+            int maxCount)
         {
             this.numberList = numberList;
-            this.countNumber = countList;
-            this.interval = interval;
             this.minInterval = minInterval;
             this.maxInterval = maxInterval;
+            this.maxCount = maxCount;
         }
         public void Run()
         {
             while (true)
             {
-                numberList.GetNumbers(countNumber.Next(1,numberList.NumberCount));
-                Thread.Sleep(interval.Next(maxInterval));
+                int countNumbers = random.Next(1, numberList.maxCount + 1);
+                numberList.GetNumbers(countNumbers);
+                int interval = random.Next(minInterval, maxInterval);
+                Thread.Sleep(interval);
             }
 
         }

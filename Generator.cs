@@ -13,28 +13,35 @@ namespace shambala_ThreadsExampl_01_11_2023
         private Random random;
         private int minValue;
         private int maxValue;
-        public Generator(ThreadSafeNumberList numberList, int listlimit, Random random,
-            int minValue, int maxValue)
+        private int interval;
+        public Generator(ThreadSafeNumberList numberList, int listlimit,
+            Random random, int minValue, int maxValue, int interval)
         {
             this.numberList = numberList;
             this.listlimit = listlimit;
             this.random = random;
             this.minValue = minValue;
             this.maxValue = maxValue;
+            this.interval = interval;
         }
-        public void AddNumber()
+
+        public void Run()
         {
-            int numbercount = numberList.NumberCount;
-            if (numberList.NumberCount < listlimit) 
+            while (true)
             {
-                List <int> numbers = new List<int>();
-                for (int i = 0; i < listlimit-numbercount; i++)
+                int numbercount = numberList.NumberCount;
+                if (numberList.NumberCount < listlimit)
                 {
-                    numbers.Add(random.Next(minValue,maxValue));
+                    List<int> numbers = new List<int>();
+                    for (int i = 0; i < listlimit - numbercount; i++)
+                    {
+                        numbers.Add(random.Next(minValue, maxValue));
+                    }
+                    numberList.AddNNumbers(numbers);
                 }
-            numberList.AddNNumbers(numbers);
+                Thread.Sleep(interval);
+
             }
         }
-      
     }
 }
