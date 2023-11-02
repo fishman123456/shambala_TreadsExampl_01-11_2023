@@ -10,11 +10,11 @@ namespace shambala_ThreadsExampl_01_11_2023
     internal class Monitor
     {
         private ThreadSafeNumberList numberList;
-        private int delay;
+        private int interval;
         public Monitor(ThreadSafeNumberList numberList, int delay)
         {
             this.numberList = numberList;
-            this.delay = delay;
+            this.interval = delay;
         }
 
         public void Run ()
@@ -22,7 +22,7 @@ namespace shambala_ThreadsExampl_01_11_2023
             while (true)
             {
                 Console.WriteLine(numberList.ToString());
-                Thread.Sleep(delay);
+                Thread.Sleep(interval);
             }
             
         }
