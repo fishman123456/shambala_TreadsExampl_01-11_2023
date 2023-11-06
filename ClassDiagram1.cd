@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="shambala_ThreadsExampl_01_11_2023.Consumer">
+    <Position X="3.25" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAgAAAAAACAAAAAAAAAAAQAAAGAAAI=</HashCode>
+      <FileName>Consumer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shambala_ThreadsExampl_01_11_2023.Generator">
+    <Position X="5.75" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAgAAAIAACAAAAAACAAAAQAAAAAAAI=</HashCode>
+      <FileName>Generator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shambala_ThreadsExampl_01_11_2023.Monitor">
+    <Position X="8.25" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Monitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shambala_ThreadsExampl_01_11_2023.ThreadSafeNumberList">
+    <Position X="8.25" Y="3.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgIAAAAAAEAAAAIAAAAAAABAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ThreadSafeNumberList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shambala_TreadsExampl_01_11_2023.Program">
+    <Position X="0.5" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

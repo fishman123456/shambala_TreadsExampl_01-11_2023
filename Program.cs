@@ -35,6 +35,8 @@ namespace shambala_TreadsExampl_01_11_2023
         static void Main(string[] args)
         {
             RunMonitor();
+            RunGeneratorMonitor();
+            RunConsumer(5);
         }
      
       
